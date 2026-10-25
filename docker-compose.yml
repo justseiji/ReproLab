@@ -1,0 +1,25 @@
+# Local services for ReproLab. Only PostgreSQL runs in Docker; the Node services
+# and Playwright run on the host (see README).
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: reprolab-postgres
+    environment:
+      POSTGRES_USER: reprolab
+      POSTGRES_PASSWORD: reprolab
+      POSTGRES_DB: reprolab
+    ports:
+      # Bound to localhost only. 5433 avoids clashing with a system Postgres on 5432.
+      - "127.0.0.1:5433:5432"
+    volumes:
+      # PostgreSQL 18+ images keep data under /var/lib/postgresql/<major>/docker.
+      - reprolab-pg:/var/lib/postgresql
+      - ./scripts/docker-init-test-db.sql:/docker-entrypoint-initdb.d/10-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reprolab -d reprolab"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  reprolab-pg:

@@ -1,0 +1,19 @@
+{
+  "name": "@reprolab/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "node ../../scripts/build-node.mjs src/index.ts dist/index.js",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.7",
+    "@reprolab/db": "0.1.0",
+    "@reprolab/shared": "0.1.0",
+    "fastify": "^5.12.7",
+    "zod": "^4.6.7"
+  }
+}

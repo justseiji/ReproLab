@@ -1,0 +1,150 @@
+/*
+ * Design tokens. Every color, size and timing in the UI comes from here.
+ *
+ * Palette: warm paper neutrals, one cobalt "ink" accent for interaction, and
+ * semantic colors reserved for outcomes and alerts (always paired with an icon
+ * and text, never color alone).
+ */
+:root {
+  /* Surfaces and text */
+  --color-bg: #f6f4ef;
+  --color-surface: #fffdf9;
+  --color-surface-sunken: #efece5;
+  --color-surface-hover: #f2efe8;
+  --color-border: #e2ddd2;
+  --color-border-strong: #cbc4b6;
+  --color-text: #1d1b17;
+  --color-text-muted: #635d53;
+  --color-text-subtle: #7d766a;
+
+  /* Accent (interaction, selection, focus) */
+  --color-accent: #2c4bc7;
+  --color-accent-hover: #213ba3;
+  --color-accent-soft: #e9ecfa;
+  --color-accent-contrast: #ffffff;
+  --color-focus: #2c4bc7;
+
+  /* Semantic: outcomes and alerts only */
+  --color-bad: #b02a1e;
+  --color-bad-soft: #fbeae6;
+  --color-ok: #1b7444;
+  --color-ok-soft: #e5f2e9;
+  --color-warn: #8a5800;
+  --color-warn-soft: #faf0da;
+  --color-neutral: #585349;
+  --color-neutral-soft: #ebe8e1;
+
+  /* Code */
+  --color-code-bg: #f8f6f1;
+  --color-code-text: #24211c;
+
+  --color-backdrop: rgb(24 22 18 / 0.62);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, "Liberation Mono", monospace;
+  --text-2xs: 0.72rem;
+  --text-xs: 0.8rem;
+  --text-sm: 0.867rem;
+  --text-base: 1rem;
+  --text-md: 1.067rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.6rem;
+  --weight-regular: 400;
+  --weight-medium: 550;
+  --weight-semibold: 620;
+  --weight-bold: 700;
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-code: 1.6;
+  --tracking-tight: -0.015em;
+  --tracking-caps: 0.07em;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Borders and radii */
+  --border: 1px solid var(--color-border);
+  --border-strong: 1px solid var(--color-border-strong);
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+
+  /* Elevation: used only for overlays */
+  --shadow-overlay: 0 16px 48px rgb(24 22 18 / 0.24);
+
+  /* Controls and interaction */
+  --control-height: 36px;
+  --control-height-sm: 28px;
+  --focus-ring: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-focus);
+  --duration-fast: 120ms;
+  --duration: 180ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Layout */
+  --content-width: 1200px;
+  --gutter: var(--space-6);
+
+  color-scheme: light;
+}
+
+/* Dark: warm graphite. Applied from the OS preference. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #151412;
+    --color-surface: #1c1b18;
+    --color-surface-sunken: #121110;
+    --color-surface-hover: #24221e;
+    --color-border: #312e29;
+    --color-border-strong: #45413a;
+    --color-text: #ece8e0;
+    --color-text-muted: #aaa397;
+    --color-text-subtle: #8f887c;
+
+    --color-accent: #93a5ff;
+    --color-accent-hover: #b0bdff;
+    --color-accent-soft: #1f2440;
+    --color-accent-contrast: #10142b;
+    --color-focus: #93a5ff;
+
+    --color-bad: #ff8d7d;
+    --color-bad-soft: #351b17;
+    --color-ok: #6ccf95;
+    --color-ok-soft: #152a1d;
+    --color-warn: #edbb5c;
+    --color-warn-soft: #30250f;
+    --color-neutral: #b8b1a5;
+    --color-neutral-soft: #29271f;
+
+    --color-code-bg: #171614;
+    --color-code-text: #e3ded4;
+
+    --color-backdrop: rgb(0 0 0 / 0.7);
+    --shadow-overlay: 0 16px 48px rgb(0 0 0 / 0.5);
+
+    color-scheme: dark;
+  }
+}
+
+/* Touch devices get larger hit targets. */
+@media (pointer: coarse) {
+  :root {
+    --control-height: 44px;
+    --control-height-sm: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: var(--space-4);
+  }
+}

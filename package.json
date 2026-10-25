@@ -1,0 +1,45 @@
+{
+  "name": "reprolab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Turns plain-language bug reports into evidence-backed browser reproductions and reviewable Playwright regression tests.",
+  "type": "module",
+  "workspaces": [
+    "packages/shared",
+    "packages/db",
+    "apps/store",
+    "apps/worker",
+    "apps/api",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n store,api,worker,web -c magenta,cyan,yellow,green \"npm:dev -w @reprolab/store\" \"npm:dev -w @reprolab/api\" \"npm:dev -w @reprolab/worker\" \"npm:dev -w @reprolab/web\"",
+    "build": "npm run build -w @reprolab/store -w @reprolab/web -w @reprolab/api -w @reprolab/worker",
+    "start": "concurrently -k -n store,api,worker -c magenta,cyan,yellow \"npm:start -w @reprolab/store\" \"npm:start -w @reprolab/api\" \"npm:start -w @reprolab/worker\"",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:local": "node scripts/local-postgres.mjs start",
+    "db:local:stop": "node scripts/local-postgres.mjs stop",
+    "db:migrate": "npm run migrate -w @reprolab/db",
+    "db:seed": "npm run seed -w @reprolab/db",
+    "db:setup": "npm run db:migrate && npm run db:seed",
+    "eval:scripted": "npm run eval:scripted -w @reprolab/worker",
+    "eval:live": "npm run eval:live -w @reprolab/worker",
+    "verify:regressions": "npm run verify:regressions -w @reprolab/worker"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "concurrently": "^10.0.6",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

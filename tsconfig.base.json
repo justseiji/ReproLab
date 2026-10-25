@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": [
+      "ES2023"
+    ],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [],
+    "paths": {
+      "@reprolab/shared": [
+        "./packages/shared/src/index.ts"
+      ],
+      "@reprolab/shared/node": [
+        "./packages/shared/src/node.ts"
+      ],
+      "@reprolab/db": [
+        "./packages/db/src/index.ts"
+      ]
+    }
+  }
+}

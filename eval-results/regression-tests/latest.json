@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-24T22:22:53.687Z",
+  "rows": [
+    {
+      "Report": "coupon-removal-total",
+      "Reproduction": "REPRODUCED",
+      "Bug enabled": "assertion_failed (7600 ms)",
+      "Bug fixed": "passed (2468 ms)",
+      "Failure message (bug enabled)": "Error: expect(locator).toHaveText(expected) failed",
+      "Verdict": "✔"
+    },
+    {
+      "Report": "quantity-subtotal",
+      "Reproduction": "REPRODUCED",
+      "Bug enabled": "assertion_failed (7320 ms)",
+      "Bug fixed": "passed (2350 ms)",
+      "Failure message (bug enabled)": "Error: expect(locator).toHaveText(expected) failed",
+      "Verdict": "✔"
+    },
+    {
+      "Report": "stale-cart-badge",
+      "Reproduction": "REPRODUCED",
+      "Bug enabled": "assertion_failed (7538 ms)",
+      "Bug fixed": "passed (2129 ms)",
+      "Failure message (bug enabled)": "Error: expect(locator).toBeHidden() failed",
+      "Verdict": "✔"
+    }
+  ]
+}

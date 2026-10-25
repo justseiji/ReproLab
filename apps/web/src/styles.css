@@ -1,0 +1,11 @@
+/*
+ * ReproLab UI styles, in cascade order:
+ *   tokens      design tokens (color, type, spacing, radii, motion) for light and dark
+ *   base        element defaults, utilities, app shell
+ *   components  shared primitives (page header, sections, buttons, status, fields, tables…)
+ *   pages       data-driven page patterns (verdict, timeline, evidence log, demo switches…)
+ */
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./styles/components.css";
+@import "./styles/pages.css";

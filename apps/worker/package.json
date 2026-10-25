@@ -1,0 +1,23 @@
+{
+  "name": "@reprolab/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "node ../../scripts/build-node.mjs src/index.ts dist/index.js",
+    "start": "node dist/index.js",
+    "eval:scripted": "tsx src/cli/eval.ts --mode scripted",
+    "eval:live": "tsx src/cli/eval.ts --mode live",
+    "verify:regressions": "tsx src/cli/verify-regressions.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "@playwright/test": "1.64.1",
+    "@reprolab/db": "0.1.0",
+    "@reprolab/shared": "0.1.0",
+    "playwright": "1.64.1",
+    "zod": "^4.6.7"
+  }
+}

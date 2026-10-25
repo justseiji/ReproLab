@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.data/
+eval-results/**/*.tmp
+test-results/
+playwright-report/
+packages/db/src/generated/
+*.log
+.DS_Store
+dist-server/
+
+# Local, not part of the project
+tmp/
+.claude/
