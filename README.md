@@ -1,5 +1,5 @@
-[![Made with Claude](https://img.shields.io/badge/Made_with-Claude-D97757?logo=anthropic&logoColor=white)]
-[![Made with AI](https://img.shields.io/badge/Made_with-AI_assistance-blue)]
+![Made with Claude](https://img.shields.io/badge/Made_with-Claude-D97757?logo=anthropic&logoColor=white)
+![Made with AI](https://img.shields.io/badge/Made_with-AI_assistance-blue)
 # ReproLab
 
 ReproLab turns a plain-language bug report into an **evidence-backed browser reproduction** and, when the bug
